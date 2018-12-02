@@ -1,0 +1,523 @@
+I'm no expert, but this is my list. For a while I was running [[Shadowblade]], but I found that it rarely came into play. The Curator is a mild tech choice adding another way to draw a Coldlight and another taunt. Geist is crucial for several matchups and warrants inclusion
+
+### Mill
+# Class: Rogue
+# Format: Wild
+#
+# 2x (0) Preparation
+# 2x (0) Shadowstep
+# 2x (2) Doomsayer
+# 2x (2) Gang Up
+# 2x (2) Sap
+# 2x (2) Unstable Ghoul
+# 1x (3) Brann Bronzebeard
+# 2x (3) Coldlight Oracle
+# 2x (3) Deathlord
+# 2x (3) Fan of Knives
+# 1x (3) Gluttonous Ooze
+# 2x (5) Rotten Applebaum
+# 2x (5) Sludge Belcher
+# 1x (6) Skulking Geist
+# 2x (6) Vanish
+# 1x (7) The Curator
+# 1x (9) Valeera the Hollow
+# 1x (10) N'Zoth, the Corruptor
+# 
+AAEBAYO6AgaFF+CsArmyAtPFAqDOAoDTAgyKAcQB7QLNA5sF+AeGCf4NgQ6QDoASxfMCAA==
+meztastic
+For testing try setting up a virtual machine on your Windows machine. If you don't already have one, or in the case of Windows 10, do not want to use their Linux on Windows native software, Oracle VirtualBox is a nice free VM. The biggest benefits of testing with a VM is that mistakes are less likely to harm your entire system, and it only takes minutes, not an hour or more for install.
+
+I started with Ubuntu because of it's documentation and have stuck with it. I also use PuppyLinux to keep an old machine relevant, and Kali Linux for it's network tools. One word to the wise, while distro hopping, stay within a family such as Debian, Arch, Knoppix, Red Hat, Slackware, etc. How the different families are assembled will vary, and BASH scripting and commands have slightly different dialects if you will. If you stay within Debian and it's derivatives, much of what will work on Ubuntu in the command line will work in Mint. Though there will be differences as to what programs are contained in both. 
+
+Once you find a distro, most come bundled with Grub bootloader which is well documented and arguablely the most versatile. You will need to configure your UEFI to boot into Grub which can then allow you to boot into the OS you prefer. The first sector of any drive have the flags for bootable device and it is your system's firmware that looks for those flags when they are configured to do so.
+
+Please become familiar with Linux file systems since drives and partitions are labeled differently than with Windows. You may find it beneficial to physically unplug your Windows drive while you install Linux on your 2nd drive to be sure the first time. Linux drive paths are not static, though physical volume labels are if you label them. Gparted is a GUI program that allows you to do this, but in the terminal "fdisk" will also do this. I don't suggest coming into Linux a hero and trying to do everything via the command line until you have an understanding of basic command line nomenclature and commands.
+
+Never do anything in the command line that asks you to become root! Always "sudo" your way through a task so there will at least be a log of your actions! If you copy and paste command line fixes, take a moment to read the "man" pages for the command and understand what the command is doing. 
+
+No reason your transition cannot be smooth. With Linux, you are entering a community with more capable users, and an OS which gives you more control! Have fun!
+
+MNfrstrtD
+[Here](https://www.reddit.com/r/FortniteFashion/comments/924anu/fate_battle_shroud_oracle_axe_lightning_request/) you go!
+DextroEU
+The schematic is tied to characters. If you deleted the character you did the oracles on then your schematic is gone.
+BleachSepaku
+[Here](https://www.reddit.com/r/FortniteFashion/comments/924anu/fate_battle_shroud_oracle_axe_lightning_request/) you go!
+DextroEU
+strange.
+I started again from zero and did exactly the following in this order:
+
+1. Deleted d:\amidst_113 and d:\maven then uninstalled all Java variants
+2. Redownloaded and Reinstalled Java
+ * [JDK10](http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html) to d:\java\jdk-10.0.2
+ * JRE (from within JDK installer) to d:\java\jre-10.0.2
+ * [Java 1.8.0_181](https://java.com/en/download/) to d:\java\jre1.8.0_181
+3. downloaded the [amidst-1-13-snapshots.zip](https://github.com/toolbox4minecraft/amidst/archive/1-13-snapshots.zip) and [apache-maven-3.5.4-bin.zip](http://www.trieuvan.com/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip). and unzipped to
+ * d:\amidst_113
+ * d:\maven
+4. Created the user variables
+  * M2_HOME=d:\maven
+  * MAVEN_HOME=d:\maven
+  * JAVA_HOME=d:\java\jdk-10.0.2
+5. updated PATH
+  * %M2_HOME%\bin
+  * %MAVEN_HOME%\bin
+  * %JAVA_HOME%
+6. Opened Command Prompt and changed directory to D:\amidst_113
+7. ran the mvn commands
+  * mvn clean   -**BUILD SUCCESS**
+  * mvn install  -**BUILD SUCCESS**
+  * mvn package -DskipTests=true -f travis-ci/wrapper-for-windows/pom.xml  -**BUILD SUCCESS**
+8. copied d:\amidst_113\target\amidst-v4-3-beta3.exe to my desktop for easier access
+
+slmndr
+Ah too bad man, did you get the oracle chest on your Hunter too? It will be on any character you've done the chest on. 
+IamSnokeO_o
+**Google Storage Impact**
+
+
+
+
+At the 2018 Google NEXT conference in San Francisco the company was announcing and showing a number of products and initiatives that will have an impact on the generation and use of digital content, and thus enable the use of digital storage and memory for both on-premises and cloud applications.
+
+
+Google says that it has many football fields worth of data centers, running carbon neutral all over the world. It says that companies are moving their content from their own data centers to the cloud. Containers (Kubernetes) and artificial intelligence (AI, including the use of Tensor Flow for speech and vision recognition) are some of the major initiatives at Google, driving a variety of new product offerings. Google said that 8 out of 10 enterprises have a multi-cloud strategy, sharing their content across applications running on various cloud platforms.
+
+
+A big driver of cloud and edge processing, networking and storage are various Artificial Intelligence algorithms, especially various types of machine learning (ML). These applications have various levels of sensitivity to latency, particularly for Internet of things (IoT) applications. This has led to various types of ML running locally, at the network edge and in the cloud and as a result different storage and memory needs in these various locations. In order to serve the need for consistent container-based software in the cloud and on-premises, Google introduced a Kubernetes container solution running in a local data center that can be managed with a common interface to cloud containers.
+
+
+Google also announced its third generation FPGA Tensor Processing Unit (TPU), available for ML applications in the Google cloud. It also introduced a very small, low power, new edge TPU (now available for alpha testing) that runs pre-trained machine learning algorithms for IoT applications closer to network edges. These technologies could have a major impact on integrating cloud and edge machine learning applications. Processing on the edge (or even in a mission critical device) can decrease latency and filter the data that might eventually make its way into the cloud for factory automation, smart cities and other IoT applications. The edge TPU device is a special purpose ASIC chip running Tensorflow light ML models with a quad core NXP CPU and will be available in October 2018. The edge IoT chip comes with a development kit.
+
+
+Google also said that its BigQuery machine learning search capability can do Petabyte-scale data queries in seconds. This allows familiar SQL searches to run on dig data warehouses. Google said that it is introducing a number of database features and partnerships. These include Oracle workloads run on the Google Cloud Platform (GCP) and SAP HANA workloads run on GCP persistent-memory VMs, Cloud Firestore for users developing cloud-native apps, regional replication and visualization available for Cloud Bigtable and updates to the company’s Cloud Spanner.
+
+
+The SAP HANA announcement includes using Intel Optane DC as the persistent memory (ML) layer. Intel Optane DC PM offers higher overall memory capacity and lower cost compared to instances with only DRAM. Google Cloud instances on Intel Optane DC PM for SAP HANA and other in-memory database workloads will soon be available through an early access program. These workloads are now generally available with up to 4 TB virtual machines today but Google expects these will be as high as 12 TB ty next Summer and 18 TB by the end of 2019. Intel had a booth in the Google NEXT exhibit area, featuring its Optane PM technology.
+
+
+About Google Cloud Firestore, the company says, “Cloud Firestore now supports Datastore Mode. Cloud Firestore, currently available in beta, is the next generation of Cloud Datastore, and offers compatibility with the Datastore API and existing client libraries. With the newly introduced Datastore mode on Cloud Firestore, you don’t need to make any changes to your existing Datastore apps to take advantage of the added benefits of Cloud Firestore. After general availability of Cloud Firestore, we will transparently live-migrate your apps to the Cloud Firestore backend, and you’ll see better performance right away, for the same pricing you have now, with the added benefit of always being strongly consistent.”
+
+
+In addition to Google and Intel memory and storage announcements, there were several other companies showing storage related products. These included NetApp’s Cloud Volumes, Zadara with its Zadara Cloud Hydration product (that enables businesses to move static as well as mirrored dynamic corporate data to the cloud through a cost-effective process), Spanning (offering backup and restore of G-Suite, Salesforce and Office 365 content), Ctera (offering secure enterprise file service from the edge to the cloud, they were showing content sharing with the cloud running from Drobo NAS boxes), Igneous (offering backup and archiving for massive file systems).
+
+
+Start-up Fileshadow was working with partner Wasabi to show its multi-cloud ML solution for prosumers and small and medium businesses. The company was showing integration into a single storage vault with Box, Dropbox, Google Drive, OneDrive, Adobe Creative Cloud, Wasabi and Drobo NAS appliances, Google and IBM cloud object storage. The company’s location analysis, image analysis and document analysis ML apps can be applied to this shared content in local NAS boxes (they were showing Drobo NAS) as well as these various cloud services. The partnership with Wasabi allows choosing file storage services with Wasabi Hot Cloud Storage, Google Cloud Storage or IBM Cloud Object Storage. The Fileshadow exhibit is shown below.
+
+
+The 2018 Google NEXT conference gave insights into the future of cloud storage and its interaction with on-premises as well as multi-cloud solutions. Google and the many other storage/memory oriented companies at the show demonstrated how these technologies will help companies get more done at lower cost.
+
+✌ cool people read before commenting ✌
+ReadTheArticleBitch
+[Here](https://www.reddit.com/r/FortniteFashion/comments/924d9h/fate_battle_shroud_oracle_axe_split_wing/) you go!
+DextroEU
+[Here](https://www.reddit.com/r/FortniteFashion/comments/924d9h/fate_battle_shroud_oracle_axe_split_wing/) you go!
+DextroEU
+### mill
+# Class: Rogue
+# Format: Wild
+#
+# 2x (0) Preparation
+# 2x (0) Shadowstep
+# 2x (2) Doomsayer
+# 1x (2) Evasion
+# 2x (2) Gang Up
+# 2x (2) Sap
+# 1x (3) Brann Bronzebeard
+# 2x (3) Coldlight Oracle
+# 2x (3) Deathlord
+# 2x (3) Fan of Knives
+# 2x (4) Elven Minstrel
+# 2x (5) Antique Healbot
+# 2x (5) Rotten Applebaum
+# 2x (5) Sludge Belcher
+# 2x (6) Vanish
+# 1x (9) Valeera the Hollow
+# 1x (10) N'Zoth, the Corruptor
+# 
+AAEBAaIHBIUX4KwCgNMC3+MCDYoBxAHtAs0DmwX4B4YJ/g2BDvUPgBLb4wLF8wIA
+# 
+# To use this deck, copy it to your clipboard and create a new deck in Hearthstone
+
+sylvr_
+Ill echo what a few people have said already that blasting is fun and fairly straight forward but that you probably dont need more than a few blasting spells. Burning hands, magic missile, scorching ray, fireball, lightning bolt, cone of cold. Those sort of spells are all good for their levels. 
+
+Since you specifically mentioned being a cold focuses blaster I will throw out a few more advanced options than just playing a core sorcerer. 
+
+*  Take 1 level of [Admixture Wizard](https://www.d20pfsrd.com/classes/core-classes/wizard/arcane-schools/paizo-arcane-schools/classic-arcane-schools/evocation/admixture/). - this will allow you to turn spells of another type into a cold spell. Fireball? NAH. COLDBALL! 
+   * Pro - You can, a number of times per day equal to your int mod + 3, turn spells of an energy type into any other type. So you can make them cold or whatever you need to get around resistances. 
+   * Con - Multiclassing slows down progression a little bit. And Sorcerers are already a level behind Wizards in spell progression.
+*  Take the [Crossblooded Sorcerer Archtype](https://www.d20pfsrd.com/classes/core-classes/sorcerer/archetypes/paizo-sorcerer-archetypes/crossblooded/) then [Marid Bloodline](https://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/marid-bloodline/) as your second bloodline. Again this lets you turn spells into cold spells. 
+   * Pro - Change stuff to cold spells without limitation of times per day. More options for bonus spells. More options for Bonus Feats. More Class Skills. 
+   * Con  - always having a -2 to will saves. 1 less spell per level. 
+* 1 level dip into[ Waves Oracle](https://www.d20pfsrd.com/classes/base-classes/oracle/mysteries/paizo-oracle-mysteries/waves/) to get Freezing Spells as a revelation to boost your cold spells 
+   * Pro - Adds slow to cold spells when the fail their save. 
+   * Con - multiclassing. 
+
+To comment on metamagic feats. I think a lot of this really depends what you want to get out of your spells. Lets take Fireball as our example spell and see what we might enhance it with and why we might do that. 
+
+[Intensified Spell ](https://www.d20pfsrd.com/feats/metamagic-feats/intensified-spell-metamagic)  \- This is going to increase our max damage dice from 10 at level 10 to 15 at level 15. In other words we would use intensified to make fireball do more damage at higher levels. 
+
+[Persistent Spell ](https://www.d20pfsrd.com/feats/metamagic-feats/persistent-spell-metamagic) \- This is going to force the target(s) to make a second save if they pass the first one. You would use this when you REALLY want a target to fail the save. So for fireball maybe you know the enemy is almost down and you just really want to do that last bit. Persisting increases your odds that they wont succeed. 
+
+[Selective Spell](https://www.d20pfsrd.com/feats/metamagic-feats/selective-spell-metamagic) \-  This allows you to deselect people from the spells effect area. This is for those people who simply dont want to have to stop casting fireball because their pesky teammates got in the way. Think of it like hitting ctrl+a on a list or excel spreadsheet then using Ctrl+left click to deselect specific things. 
+
+[Dazing Spell](https://www.d20pfsrd.com/feats/metamagic-feats/dazing-spell-metamagic) \- This makes people unable to act normally if they fail the save against your spell. So this is for when you think to yourself that damage is nice but I also want a bit of crowd control on my fireball. 
+
+The downside of these of course is that they increase the spell slot used, sometimes significantly. But that brings us to traits and rods. With Rods we can apply metamagic to spells of a certain level group, a few times a day, without needing to increase their spell slot used.  I think in my personal experience rods of Quicken and Extend are pretty common but for cold spells I might suggest a Rime Rod. 
+
+For traits, there are two very popular traits used to help spells with metamagic. [Wayang Spell Hunter](http://www.archivesofnethys.com/TraitDisplay.aspx?ItemName=Wayang%20Spellhunter) and [Magical Lineage.](https://www.d20pfsrd.com/traits/magic-traits/magical-lineage/) The downside being that of course you must select a spell ahead of time that you want to reduce the impact of metamagic feats upon. And it should be pointed out, both traits can be on the same spell for a cumulative effect. 
+
+Take what you will from these and disregard the rest. Its a lot of information and you certainly don't need it all right now. The most important thing is to design and play a character you can be excited about. If mechanics do that for you then optimize the hell out of it. If story does that for you then write a killer backstory and personality for the character. Its all a game in the end so having fun is more important than being the best. 
+
+One last bit of advice unrelated since its your first full campaign. Take notes. Write down names and places and events. Write your characters story and perspective of events. Some campaign can go for months or years so it helps you keep things straight, it helps to keep your characters perspective, and it will help other players who seem to always forget what happens between sessions. 
+TotallyNotYourGM
+Dd gives str, and a battle Oracle isn't too bad.
+ThatGuyMax
+I heard that Green used to be the "Top-of-Deck" Color, that refers to  Cards like Genesis Wave/Komahl's, Shamanic Revelation, Satyr, Commune Cards, Vizier/Oracle of Mul Daya, type effects, right?
+Sheriff_K
+"Bottomless" popcorn and soft drinks each for $4 
+
+Gosh going to Oracle and buying a BOTTLE of soda is more than $6 with $40 nosebleed seats
+mattjchin
+I don't think geist is a must but I guess if you really see that many jades maybe it can help. Your gameplan in that matchup isn't to gang up oracle anyway, you just shuffle a billion nzoths into your deck. Nzoth mill is similar to patron in that regard, where depending on the matchup you generally went for either a patron kill or a frothing kill. So with mill you either go for a nzoth plan or an oracle plan. It isn't always as cut and dry as that, of course. Some of the skill in piloting the deck is knowing when to pivot and what to use your gang ups on, which can very well sometimes be your opponents minions even.
+sylvr_
+I suppose it could work if you play it like this:
+
+* Halo: Reach
+* Halo: Combat Evolved
+* Halo 2
+   * The Heretic, The Armory, Cairo Station, Outskirts, Metropolis
+* Halo 3: ODST
+* Halo 2
+   * The Arbiter, The Oracle, Delta Halo, Regret, Sacred Icon, Quarantine Zone, Gravemind, Uprising, High Charity, The Great Journey
+* Halo 3
+* Halo 4
+* Halo 4: Spartan Ops
+* Halo 5: Guardians
+
+This would be the purest chronological order you could play in, in my opinion, but if you want all the games in there you could add Halo Wars first and Halo Wars 2 last, with the Spartan Assault games between 3 and 4. 
+
+An order like the Machete order *could* be something like this: 
+
+* Halo: Reach
+* Halo: CE
+* Halo 5: Guardians
+   * Osiris to Reunion
+* Halo 2: Anniversary Intro Cutscene
+* Halo 2
+* Halo 3: ODST
+* Halo 2: Anniversary Outro Cutscene
+* Halo 3
+* Halo 4
+* Halo 4: Spartan Ops
+* Halo 5: Guardians
+   * Swords Of Sanghelios to Guardians
+
+But this might be a little jarring, with that just from Chief saying "We're just getting started" in the Longsword to Locke hunting Jul M'Dama, but then again so is the jump from the Darth Vader reveal to the Naboo ship blowing up. 
+Fireborn364
+Live DApp store, token and decentralized payments though php, Node.js, Ruby, python and unity SDKs. Late 2018 early 2019 oracles and decentralized data marketplace to hook into DApps. 
+mrtpain
+Probably, yeah. He's top 100 Oracle or something and brings it up a lot.
+ThatForearmIsMineNow
+I don't think there's anything messier than where we're at now.  People have to either look up the oracle text of every burn spell ever printed that can hit players, or they have to remember when the rule change happened and know all the sets that came after it.
+Montahc
+I just want the new Oracle art. Definitely worth it just for that for me. 
+Swiftstar88
+Well the most obvious way to do it is to write a simple Server for your raspberry which accepts a TCP connection and lets the client tell it what to do. In your Java program you will then connect to the raspberry and exchange the necessary information. 
+
+Some links for you to look at: 
+
+* https://wiki.python.org/moin/TcpCommunication#Server
+
+* https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html
+
+
+IchMagReddit
+It should now we just had AWS guys at work coming in and they confirmed. They still use some Oracle dbs for Amazon though
+Mcwastiiee
+If your oracle DB keeps changing on you then your org has a serious problem. First issue is to find out if these changes are scheduled to stop soon due to a reorganization. If the changes have always been an org issue, you might want to find another org to work for.
+
+When I write programs I consider them automated when my code can take in the current date/time and use that to read/write files without changing any code. Occasionally an input statement is needed as well if the report isn’t as simple to schedule to an exact date. This is pretty simple stuff and doesn’t need a whole source to learn.
+
+Scheduling is a good step to implement but not necessary to everyone - look into cron if you use Mac, or just windows task manager if you use windows.
+breton147
+Alright you oracle. I expect you to bust out some lotto numbers. XD
+axelofthekey
+Errm, I doubt anyone will read this after 8 days but it wasn't Tim Rice-Oxley who handed over the name Coldplay. It was Tim CROMPTON, another friend of Chris's who had another band.
+It has been confirmed by the Oracle.
+IRanAwayProject
+Bloodbath is a pretty cool guy. Hes the one thats run but Das oracle of malice, right?
+stuglyfe45
+Does Coiling Oracle count? Because it's mine.. :P
+Sheriff_K
+Even BSJ was making better calls than them, come on. They cannot expect to win a fight near shrine when necro had oracle ulti on him near shrine. Then they go to push high ground and WK was so stupid with his positioning having a pudge in the other team. You say is not easy, yeah it isn't but the mistakes they made were stupid, you don't need to be some dota genius to know basic things aa those.
+Ennheas
+### Brawl Deck
+# Class: Rogue
+# Format: Wild
+#
+# 2x (1) Deadly Poison
+# 1x (1) Kingsbane
+# 2x (2) Beckoner of Evil
+# 2x (2) Cavern Shinyfinder
+# 2x (2) Cheat Death
+# 2x (2) Leeching Poison
+# 2x (2) Sap
+# 2x (3) Coldlight Oracle
+# 2x (3) Disciple of C'Thun
+# 1x (3) Sonya Shadowdancer
+# 2x (4) Blade Flurry
+# 1x (4) C'Thun's Chosen
+# 2x (4) Southsea Squidface
+# 2x (4) Tinker's Sharpsword Oil
+# 1x (6) Emperor Thaurissan
+# 1x (8) Doomcaller
+# 1x (9) Blade of C'Thun
+# 1x (9) Valeera the Hollow
+# 1x (10) C'Thun
+# 
+AAEBAaIHCNYRi68Cya8Cza8Cz68CgNMCz+ECu+8CC8sDzQP4B6gIrxCTrQKprwLLrwKpzQLl0QLQ4wIA
+# 
+# To use this deck, copy it to your clipboard and create a new deck in Hearthstone
+Xsasdelfan
+You and u/SunsetOracle 
+brosenfeld
+Except in Zefra, Shrine is 100% better.
+
+Zefra is the exception since they already run terraforming and Oracle is an hard OPT, and they can also play set rotation. And even then, players that run Ravine run it at 1.
+GenoFour
+I don't know what series that is, but here are the series' characters of characters from the series that the characters in the title are in (that sentence is how confusing your title was to me): 
+
+Batman: [Bane](http://imgur.com/a/9cmYg), [Barbara Gordon](http://imgur.com/a/kqxEM), [Batman](http://imgur.com/a/niawR), [Batwoman](http://imgur.com/a/sVece), [Candy](http://imgur.com/a/hPd2g), [Cassandra Cain](http://imgur.com/a/SI7QO), **[Catwoman](http://imgur.com/a/hQSRW)**, [Classic Harley Quinn](http://imgur.com/a/XinFo), [Clayface](http://imgur.com/a/Sr0vz), [Copperhead](http://imgur.com/a/pY5Yu), [Dee Dees Beyond](http://imgur.com/a/EgUjG), [Duela Dent](http://imgur.com/a/S8sYE), [Harley Quinn](http://imgur.com/a/ZPzX8), [Harley Quinn](http://imgur.com/a/37A6b), [Inque](http://imgur.com/a/VRM5M), [Livewire](http://imgur.com/a/1uha9), [Magpie](http://imgur.com/a/taqpT), [Nightwing](http://imgur.com/a/nmpT6), [Oracle](http://imgur.com/a/H8VD8), [Poison Ivy](http://imgur.com/a/735IB), [Stephanie Brown](http://imgur.com/a/3mhml), [Talia Al Ghul](http://imgur.com/a/0XZFv), 
+
+Street Fighter: [Cammy White](http://imgur.com/a/1Iplg), [Chun-Li](http://imgur.com/a/EMhl5), [Crimson Viper](http://imgur.com/a/KwiW3), [Decapre](http://imgur.com/a/EuiHV), [Ibuki](http://imgur.com/a/uVERH), [Juni](http://imgur.com/a/Ynqz8), [Juri Han](http://imgur.com/a/gpHcX), [Laura Matsuda](http://imgur.com/a/5KXN7), [Mika Nanakawa](http://imgur.com/a/XNStB), **[Poison](http://imgur.com/a/MpWnk)**, [Rose](http://imgur.com/a/a4pnU), [Menat](https://imgur.com/a/31e9W), 
+
+Monster Rancher: [Angel](http://imgur.com/a/Eq1lw), [Daina](http://imgur.com/a/rYNqX), [Lilim](http://imgur.com/a/fqtPE), [Pixie](http://imgur.com/a/7o9Oh), **[Poison](http://imgur.com/a/dV1Qs)**, [Vanity](http://imgur.com/a/kUYoW), 
+
+League of Legends: [Ahri](http://imgur.com/a/W5l8Z), [Akali](http://imgur.com/a/UZhKj), [Anivia](http://imgur.com/a/a1N3n), [Ashe](http://imgur.com/a/QWHEZ), [Caitlyn](http://imgur.com/a/cXJBj), [Camille](http://imgur.com/a/MNkv5), [Cassiopeia](http://imgur.com/a/lO2Xg), [Diana](http://imgur.com/a/LbRxo), [Elise](http://imgur.com/a/w7d0A), [Evelynn](http://imgur.com/a/ieUfU), [Fiora](http://imgur.com/a/vKkJ6), [illaoi](http://imgur.com/a/NME2R), [Irelia](http://imgur.com/a/daCeO), [Janna](http://imgur.com/a/VJDPH), [Jinx](http://imgur.com/a/JgEy4), [Kalista](http://imgur.com/a/HgcvW), [Karma](http://imgur.com/a/U4EVz), [Katarina](http://imgur.com/a/sFOTI), [Kayle](http://imgur.com/a/J4bhm), [Kindred](http://imgur.com/a/a4Wkl), [Leblanc](http://imgur.com/a/wJ1N8), [Leona](http://imgur.com/a/zhNoA), [Lissandra](http://imgur.com/a/qLiZZ), [LoL Party](http://imgur.com/a/n06Ia), [Lux](http://imgur.com/a/FXNy5), [Miss Fortune](http://imgur.com/a/b3Gn3), [Morgana](http://imgur.com/a/HukKS), [Nami](http://imgur.com/a/LO9BU), [Nidalee](http://imgur.com/a/HgNc2), [Nocturne](http://imgur.com/a/G5kws), [Orianna](http://imgur.com/a/r55Am), **[Quinn](http://imgur.com/a/o6cNi)**, [Rek'sai](http://imgur.com/a/xunIo), [Rengar](http://imgur.com/a/TBP0F), [Riven](http://imgur.com/a/Sx4Tv), [Sejuani](http://imgur.com/a/vbDuF), [Shyvana](http://imgur.com/a/hJeqm), [Sivir](http://imgur.com/a/JOEN6), [Sona](http://imgur.com/a/7fdtC), [Soraka](http://imgur.com/a/Sr0Cm), [Syndra](http://imgur.com/a/W517e), [Vayne](http://imgur.com/a/R0A6P), [Veigar](http://imgur.com/a/M4BzC), [Vel'Koz](http://imgur.com/a/b8PBS), [ Vi ](http://imgur.com/a/l6hFd), [Zyra](http://imgur.com/a/GKTWI) 
+
+ I am rule34, bot linker of porn. Send me your compliments that I may bask in them, and your complaints to iateacrayon. [What is this?](http://www.reddit.com/r/iateacrayon/wiki/index) [Repository.](http://www.reddit.com/r/iateacrayon/wiki/list) [Use me privately as much as you want...](https://www.reddit.com/message/compose/?to=rule34&message=Anything+&subject=More+Rule34)
+rule34
+Still, SPARCs were great cpus right up until Oracle killed Sun.  Sun made a good product that was a good value for the price well into the '00s.  People may have gone with X86 because it was just cheaper in a lot of cases, but the value proposition wasn't there compared to the tightly integrated platform with awesome support that Sun provided.  
+
+As far as UI goes, NeXTSTEP 3.3's UI/UX was light years ahead of anything else you could get in 1993.  Or 2000, for that matter.  NeXT just priced themselves out of existence.  You could get a comparable RISC box from Sun, IBM, or HP for under 1/2 the cost of a NeXT 68040 based machine in 1994.  
+
+mdhkc
+You are just so sure, huh? You must be a goddamn oracle or something. This is meant to be fun, stop being lame
+jiggs_
+They specified the **TI7** Oracle Immortal. Its the only Immortal he has, if they felt the need to specify...
+
+*Oracle gets Immortal in Treasure 3 confirmed*
+BettersonMcgee
+They both lose their memory from the collision, and end up switching places, with Croire acting as Planeptune's oracle and Histoire dimension-hopping with big nep
+LionOfLiberty0
+.......this actually might be really, really good.
+
+Now, yeah, it's diluting your deck like crazy, and it's also not that good for Mill decks because you don't want random cards in your deck, you want lots of Coldlight Oracles (in wild) or a single duplicate of Kingsbane that you can keep cycling back into it.
+
+But for Miracle Rogue, this could create all kinds of value. Play this, then Auctioneer, then start trying to go off. You might hit a lot of minions, but 1 mana cost spells that draw a card tend to be exactly what you need for Miracle Rogue to go off.
+
+Good odds it'd just be too janky to work, of course. But I can see it being a good spell for actually competitive decks, not just fun stuff like Tess Rogue.
+Wraithfighter
+Not really, honestly.
+
+Kingsbane Rogue doesn't need more cards in their deck, they can use Valeera to get a second Kingsbane and permanently avoid fatigue that way.
+
+And Mill Rogue wants to fill their deck with lots and lots of Coldlight Oracles, so that when they play a coldlight oracle they get a coldlight oracle or two and then they can play it again and get another coldlight oracle or two and then play that to get another one or two and your opponent just took 21 fatigue damage and is begging for mercy. Random cards, even if they cost 1, just increases the chance of a combo breaker.
+Wraithfighter
+Man, that's a lot of Pokémon.  How is that Mickey game?  I have the two Epic Mickies, but have never played them yet.
+
+So, you asked for recommendations and I thought I could pull up the list of games I am interested in.  That turned into a mess because I had to organize and format, but here it is.  I actually have not bought a 3DS yet, these are the games that I was looking up to have a reason to buy the console.  There are so many games for DS and 3DS, I really haven't done that much research yet.
+
+Most first- and second-party titles have been ignored because they are obvious choices, and some games are just oddball titles that caught my eye.  I wanted to have almost all styles of games and to touch on most of the classic series.  I love vintage games so there are compilations and a lot of Virtual Console titles.  Finally, I want to go through every Zelda title, and plenty are available for on-the-go play with 3DS.
+
+Hopefully the list can give you a few games to check out.
+
+     DS
+* Civilization Revolution
+* Dragon Ball Z: Attack of the Saiyans
+* Dragon Quest Heroes: Rocket Slime
+* SimCity Creator
+* Worms: Open Warfare 2
+* Viewtiful Joe: Double Trouble!
+
+     3DS
+* Animal Crossing: New Leaf
+* Detective Pikachu
+* Kid Icarus: Uprising
+* Phoenix Wright: Ace Attorney Trilogy
+* Ultimate NES Remix
+* WarioWare Gold
+
+     Vintage Compilations
+* Atari Greatest Hits Volume 1
+* Atari Greatest Hits Volume 2
+* Intellivision Lives!
+* Konami Classics Series: Arcade Hits
+
+     eShop
+
+     NES
+* Castlevania
+* Castlevania II: Simon's Quest
+* Castlevania III: Dracula's Curse
+* Galaga
+* Gradius
+* Kid Icarus
+* Mega Man II
+* River City Ransom
+* Super Mario Bros.
+* Super Mario Bros. 3
+
+     SNES
+* Castlevania: Dracula X
+* Contra III: The Alien Wars
+* EarthBound
+* Super Castlevania IV
+* Super Mario World
+* Super Metroid
+* Super Punch-Out!!
+
+     GB/C
+* Castlevania: The Adventure
+* Kid Icarus: Of Myths and Monsters
+* Pokémon Crystal
+* Pokémon Yellow
+* Shantae
+
+The Legend of Zelda Series
+* The Legend of Zelda
+* Zelda II: Link's Adventure
+* Link's Awakening DX
+* A Link to the Past
+* Ocarina of Time 3D
+* Oracle of Ages
+* Oracle of Seasons
+* Majora's Mask 3D
+* Triforce Heroes
+* A Link Between Worlds
+Pie_theGamer
+These are good points, and I can't say I disagree. If the ETF gets approved, the market's response will be telling I think. I'm rooting for me too! But honestly who fucking knows. If I was some oracle on this space I'd be a gozillionaire at this point. And I am not.
+bah-lock-ay
+its not even gentrification unless youre saying oracle is getting "gentrified", its rich tech people who didnt give a fuck about the team who all of a sudden will pay anything to go
+bdox15
+The [list I was looking](https://www.mtggoldfish.com/deck/995054#paper) at didn't have Azusa or any field of ruins so I might do some subbing there.
+
+[[Vizier of the Menagerie]] works great in this list, but I'd probably drop 2x [[Oracle of Mul Daya]]and like 1x Tireless tracker for 3x Azusa and I'd drop a Swamp and Horizon Canopy for 2x Field of Ruin.
+
+I'm basically going for the ultimate goal of being able to destroy 4-6 of my enemies lands per turn while I pump up tracker and Ob Nixilis
+MrSilk13642
+  
+[Vizier of the Menagerie](https://img.scryfall.com/cards/normal/en/akh/192.jpg?1517813031) - [(G)](http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Vizier%20of%20the%20Menagerie) [(SF)](https://scryfall.com/card/akh/192/vizier-of-the-menagerie?utm_source=mtgcardfetcher) [(MC)](http://magiccards.info/query?q=!Vizier%20of%20the%20Menagerie)  
+[Oracle of Mul Daya](https://img.scryfall.com/cards/normal/en/zen/172.jpg?1517813031) - [(G)](http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Oracle%20of%20Mul%20Daya) [(SF)](https://scryfall.com/card/zen/172/oracle-of-mul-daya?utm_source=mtgcardfetcher) [(MC)](http://magiccards.info/query?q=!Oracle%20of%20Mul%20Daya)  
+^^^[[cardname]] ^^^or ^^^[[cardname|SET]] ^^^to ^^^call
+MTGCardFetcher
+If you play 3 fetches with ob-nix in play your opponent is probably dead or you can start ghost quartering yourself for the same effect if you have the basics. I forgot about oracle and dropped it due to cost and the deck being funsies deck. Field of ruin is surprisingly versatile with trackers and ob-nix since both it and the basic comes in untapped.
+redwizard42
+Try to have 4 cities with libraries in them by turn 100. Then get the national college and beeline tech to university.
+
+Alternatively you can go for early wonders (artemis, hanging gardens, oracle, and usually one other) if you only go for 3 cities by turn 100
+OlmecDU
+Corrupcion en Mexico... en otras noticias, el agua sigue mojando... 
+
+Pero la verdad sigo en shock: como es posible que haya cobrado 10 veces mas que Oracle? Puro 10x-250k masterrace trabaja en SixSigma o que onda?
+moravak
+Yeah my last Pathfinder character was a multi-class Oracle (Life/Heavens mysteries). I built her as Life to be the party healer but just loved the Heavens stuff so much (but the party needed a healer, so...). 
+
+Anyway, I ended up around lvl 6 with something like an AC of 25 because of a combo of a chestpiece I found, the Cloak of Many Stars and a couple other factors. Plus, my GM let me use a falcata for my weapon.
+
+So as the healer, I ended up being the best tank, and one of the top damage dealers... totally unintentional. And I didn't need to spend much time healing, because I could just turn into a font of life and have the party pass through my square.
+
+I love Pathfinder lol
+Byeuji
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1321, in getresponse
+    response.begin()
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 1049, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 908, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/prawcore/requestor.py", line 47, in request
+    return self._http.request(*args, timeout=TIMEOUT, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/adapters.py", line 526, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "oracle-comments.py", line 20, in <module>
+    for comment in subreddit.stream.comments():
+  File "/usr/local/lib/python3.7/site-packages/praw/models/util.py", line 156, in stream_generator
+    limit=limit, params={'before': before_fullname}))):
+  File "/usr/local/lib/python3.7/site-packages/praw/models/listing/generator.py", line 52, in __next__
+    self._next_batch()
+  File "/usr/local/lib/python3.7/site-packages/praw/models/listing/generator.py", line 62, in _next_batch
+    self._listing = self._reddit.get(self.url, params=self.params)
+  File "/usr/local/lib/python3.7/site-packages/praw/reddit.py", line 371, in get
+    data = self.request('GET', path, params=params)
+  File "/usr/local/lib/python3.7/site-packages/praw/reddit.py", line 486, in request
+    params=params)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 182, in request
+    params=params, url=url)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 125, in _request_with_retries
+    retries, saved_exception, url)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 91, in _do_retry
+    params=params, url=url, retries=retries - 1)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 125, in _request_with_retries
+    retries, saved_exception, url)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 91, in _do_retry
+    params=params, url=url, retries=retries - 1)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 113, in _request_with_retries
+    data, files, json, method, params, retries, url)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/sessions.py", line 98, in _make_request
+    params=params)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/rate_limit.py", line 33, in call
+    response = request_function(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/prawcore/requestor.py", line 49, in request
+    raise RequestException(exc, args, kwargs)
+prawcore.exceptions.RequestException: error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+Traceback (most recent call last):
+  File "oracle-comments.py", line 2, in <module>
+    import praw
+ImportError: No module named praw

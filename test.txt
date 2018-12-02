@@ -1,0 +1,18 @@
+[]
+new post: 2naxro
+new post: 8zxz33
+Bot replying to :  I lOvE pYtHoN
+new post: 8zuru4
+Bot replying to :  I love python
+new post: 8zpqpk
+new post: 8zg0br
+Traceback (most recent call last):
+  File "reply_post.py", line 40, in <module>
+    submission.reply("PYTHON PYTHON YEAH YEAH YEAH")
+  File "/usr/local/lib/python3.7/site-packages/praw/models/reddit/mixins/replyable.py", line 16, in reply
+    return self._reddit.post(API_PATH['comment'], data=data)[0]
+  File "/usr/local/lib/python3.7/site-packages/praw/reddit.py", line 446, in post
+    return self._objector.objectify(data)
+  File "/usr/local/lib/python3.7/site-packages/praw/objector.py", line 122, in objectify
+    raise APIException(*errors[0])
+praw.exceptions.APIException: RATELIMIT: 'you are doing that too much. try again in 9 minutes.' on field 'ratelimit'
