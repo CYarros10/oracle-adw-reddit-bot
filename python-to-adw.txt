@@ -1,0 +1,36 @@
+alias python to python3
+Updated brew
+Installed oci cli
+Chmod to /Users/cyarros-oracle/.bash_profile
+Added public key to user in OCI
+Create cli-rc-file
+Add /Users/cyarros-oracle/.oci/cli-rc-file to include compartment id
+Install instant client put in project folder
+Install wallet put in project folder
+
+export ORACLE_BASE=~/opt/oracle/lib/instantclient_12_2
+export TNS_ADMIN=~/opt/oracle/database/Wallet_ChallengeADW
+export ORACLE_HOME=~/opt/oracle/lib/instantclient_12_2
+cd Projects/reddit-bot/
+clear
+
+
+Edit the sqlnet.ora file to include ~/opt/oracle/database/Wallet_ChallengeADW
+
+mkdir -p /opt/oracle ~/opt/oracle
+Mkdir ~/opt/oracle/lib
+unzip instantclient-basic-macos.zip
+Add links to $HOME/lib to enable applications to find the library. For example:
+
+mkdir ~/lib
+ln -s ~/opt/oracle/lib/instantclient_12_2/libclntsh.dylib.12.1 ~/lib/
+
+
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaaouuyerf5gitd5avd2zhsbnles7qbxqiz6prmywdlg54bqoi4th5q
+fingerprint=2d:32:a1:90:91:23:7b:16:8e:7a:af:9b:95:97:06:ec
+key_file=/Users/cyarros-oracle/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaag2lewgpfx45exrgreh6ggn6yy5u3ceux6znsdiepplndtmmqonnq
+region=us-ashburn-1
+compartment-id=ocid1.compartment.oc1..aaaaaaaatbpdftgehqid7fxqzcrhrchmfsnnffrpxqz3s6i2y2wvnv7po44q
+

@@ -11,6 +11,7 @@ from textblob import Blobber
 from textblob.sentiments import NaiveBayesAnalyzer
 import sys
 
+tb = Blobber(analyzer=NaiveBayesAnalyzer())
 
 def remove_emoji(comment):
     emoji_pattern = re.compile("["
@@ -27,29 +28,34 @@ def remove_emoji(comment):
     return cleaned_comment
 
 def get_comment_sentiment(comment):
-
-    tb = Blobber(analyzer=NaiveBayesAnalyzer())
-
     pattern_analysis = TextBlob(comment)
     naives_analysis = tb(comment)
     return [pattern_analysis.sentiment, naives_analysis.sentiment]
 
-if len(sys.argv) == 2:
+if len(sys.argv) >= 2:
     try:
-        sr = sys.argv[1]
         connection = co.connect('CY', 'WElcome_123#', 'ChallengeADW_high')
         cursor = connection.cursor()
 
-        insertStatement = ("INSERT INTO RedditComments (comment_id, term, subreddit, author, r_comment, r_date, pattern_polarity, naivesbayes_positive) VALUES (:1, :2, :3, :4, :5, :6, :7, :8)")
+        insertStatement = ("INSERT INTO MyRedditComments (comment_id, subreddit, author, r_comment, r_date, pattern_polarity, naivesbayes_positive) VALUES (:1, :2, :3, :4, :5, :6, :7)")
 
-        reddit = praw.Reddit('bot1')
-        term = sr + " user "
-        subreddit = reddit.subreddit(sr)
+        r = praw.Reddit('bot1')
 
-        for comment in subreddit.stream.comments():
+
+        # build stream. add first subreddit to start.
+        subreddits = sys.argv[1]
+        for sr in sys.argv[2:]:
+            subreddits = subreddits + "+" + sr
+
+        comment_stream = r.subreddit(subreddits)
+
+        print(subreddits)
+
+        for comment in comment_stream.stream.comments():
             print("====================================")
             print("ID: ", comment.id)
             print("Author: ", comment.author)
+            print("Subreddit: ", comment.subreddit)
             cleaned_comment = remove_emoji(str(comment.body))
             comment_date = str(datetime.datetime.utcfromtimestamp(comment.created_utc).strftime('%Y-%m-%d %H:%M:%S'))
             sentiment = get_comment_sentiment(cleaned_comment)
@@ -57,7 +63,7 @@ if len(sys.argv) == 2:
             naivesbayes_positive = sentiment[1].p_pos
             print("Body: ", cleaned_comment)
             try:
-                data = [str(comment.id), term, str(subreddit),str(comment.author), cleaned_comment, comment_date, pattern_polarity, naivesbayes_positive]
+                data = [str(comment.id), str(comment.subreddit),str(comment.author), cleaned_comment, comment_date, pattern_polarity, naivesbayes_positive]
                 cursor.execute(insertStatement, data)
                 connection.commit()
             except Exception as e:
