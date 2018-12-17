@@ -14,6 +14,16 @@ export ORACLE_HOME=~/opt/oracle/lib/instantclient_12_2
 cd Projects/reddit-bot/
 clear
 
+Top 50:
+
+python3 getSubredditComments-V2.py funny AskReddit worldnews pics science gaming todayilearned videos movies aww IAmA Music gifs news blog EarthPorn askscience explainlikeimfive Showerthoughts books mildlyinteresting television LifeProTips Jokes DIY space food gadgets nottheonion sports Art photoshopbattles GetMotivated tifu Documentaries UpliftingNews listentothis dataisbeautiful history Futurology personalfinance OldSchoolCool philosophy WritingPrompts nosleep creepy TwoXChromosomes technology Fitness
+
+
+My subreddits:
+
+python3 getMySubredditComments.py ANNOUNCEMENTS APPLE ASKMEN ASKREDDIT AWW BESTOF BOSTON CSCAREERQUESTIONS DATAISBEAUTIFUL EXPLAINLIKEIMFIVE EYEBLEACH FANTASYFOOTBALL FATFIRE FINANCIALINDEPENDENCE FITNESS FUNNY FUTUROLOGY GADGETS GAMING GETMOTIVATED HAPPY INVESTING IPHONE LIVERPOOLFC LIVINGSPACE MALELIFESTYLE MALELIVINGSPACE MOVIES NBA NEWS NFL NINTENDO NINTENDOSWITCH NOTTHEONION NYC ORACLE PERSONALFINANCE POLITICALDISCUSSION PROGRAMMERHUMOR PROGRAMMING RELATIONSHIP_ADVICE RELATIONSHIPS SCIENCE SHOWERTHOUGHTS SOCCER SPORTS STOCKMARKET STOCKS TECHNOLOGY TELEVISION URBANPLANNING WORLDNEWS
+
+
 
 Edit the sqlnet.ora file to include ~/opt/oracle/database/Wallet_ChallengeADW
 

@@ -1,41 +1,96 @@
+-- total number of comments
 
--- average sentiment by subreddit
-select round(avg(naivesbayes_positive), 4), subreddit from redditcomments group by subreddit;
-select round(avg(pattern_polarity), 4), subreddit from redditcomments group by subreddit;
+select count(*)
+from myredditcomments;
 
--- total number of comments for each subreddit
-select count(*), subreddit from redditcomments group by subreddit;
+-- general sentiment of reddit Today
+
+select round(avg(pattern_polarity), 4) as avg_polarity
+from myredditcomments
+where r_date
+like '%${today}%'; -- YYYY-MM-DD
+
+-- total comments collected per subreddits
+
+select count(*) as num_comments, subreddit
+from myredditcomments
+group by subreddit;
+
+-- average pattern polarity analysis per subreddits
+
+select round(avg(pattern_polarity), 4) as avg_pattern_polarity, subreddit
+from myredditcomments
+group by subreddit;
 
 
--- most pattern_polarity authors 
-select round(avg(pattern_polarity), 4) as avg_polarity, author 
-from redditcomments
-group by author 
+-- most positive authors with more than 20 comments
+
+select count(*) as num_comments, author, round(avg(pattern_polarity), 4) as avg_polarity
+from myredditcomments
+group by author
+having count(*) > 20
 order by avg_polarity DESC;
 
+-- insight into most positive authors
 
--- find average pattern polarity for authors with at least 5 comments
-select count(*) as num_comments, author, round(avg(pattern_polarity), 4) as avg_polarity from redditcomments group by author having count(*) > 5 order by avg_polarity DESC; 
+select *
+from myredditcomments
+where author = '${author}';
 
+-- average naives bayes positive analysis per subreddit
 
--- find average naivesbayes_positive for authors with at least 5 comments
-select count(*) as num_comments, author, round(avg(naivesbayes_positive), 4) as avg_naivesbayes_positive from redditcomments group by author having count(*) > 5 order by avg_naivesbayes_positive DESC; 
+select round(avg(naivesbayes_positive), 4) as avg_naivesbayes, subreddit
+from myredditcomments
+group by subreddit;
 
+-- most positive authors with more than 20 comments
 
--- most naivesbayes_positive authors 
-select round(avg(naivesbayes_positive), 4) as avg_naivesbayes_positive, author 
-from redditcomments 
-group by author 
+select count(*) as num_comments, author, round(avg(naivesbayes_positive), 4) as avg_naivesbayes_positive
+from myredditcomments
+group by author
+having count(*) > 20
 order by avg_naivesbayes_positive DESC;
 
--- find most active authors
-select author, count(*) as num_comments from redditcomments group by author order by num_comments DESC;
+-- insight into most positive author
 
--- find more insight on most active user
-select * from redditcomments where author = 'misdirected_asshole';
+select author, subreddit, r_comment, naivesbayes_positive, pattern_polarity
+from myredditcomments
+where author = '${author}';
 
--- find more insight on most positive authors:
-select * from redditcomments where author = 'HughJBawles';
-select * from redditcomments where author = 'perverted_alt';
+-- most active Users
 
-    
+select author, count(*) as num_comments
+from myredditcomments
+group by author
+order by num_comments DESC;
+
+-- insight into most active users:
+
+select *
+from myredditcomments
+where author = '${author}';
+
+-- list all Subreddits
+
+select distinct(subreddit)
+from myredditcomments;
+
+-- top 10 most negative comments by subreddit
+
+select subreddit, author, r_comment
+from
+    (select *
+     from myredditcomments
+     where subreddit = '${subreddit}'
+     order by pattern_polarity ASC)
+where ROWNUM < 10
+
+-- top 10 most positive comments by subreddit
+
+select subreddit, author, r_comment
+from
+    (select *
+     from myredditcomments
+     where subreddit = '${subreddit}'
+     order by pattern_polarity DESC)
+where ROWNUM < 10
