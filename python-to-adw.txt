@@ -8,11 +8,7 @@ Add /Users/cyarros-oracle/.oci/cli-rc-file to include compartment id
 Install instant client put in project folder
 Install wallet put in project folder
 
-export ORACLE_BASE=~/opt/oracle/lib/instantclient_12_2
-export TNS_ADMIN=~/opt/oracle/database/Wallet_ChallengeADW
-export ORACLE_HOME=~/opt/oracle/lib/instantclient_12_2
-cd Projects/reddit-bot/
-clear
+2
 
 Top 50:
 

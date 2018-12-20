@@ -37,7 +37,7 @@ if len(sys.argv) >= 2:
         connection = co.connect('CY', 'WElcome_123#', 'ChallengeADW_high')
         cursor = connection.cursor()
 
-        insertStatement = ("INSERT INTO RedditComments (comment_id, subreddit, author, r_comment, r_date, pattern_polarity, naivesbayes_positive) VALUES (:1, :2, :3, :4, :5, :6, :7)")
+        insertStatement = ("INSERT INTO RedditComments (comment_id, subreddit, author, r_comment, r_score, r_date, pattern_polarity, naivesbayes_positive) VALUES (:1, :2, :3, :4, :5, :6, :7, :8)")
 
         r = praw.Reddit('bot1')
 
@@ -63,7 +63,7 @@ if len(sys.argv) >= 2:
             naivesbayes_positive = sentiment[1].p_pos
             print("Body: ", cleaned_comment)
             try:
-                data = [str(comment.id), str(comment.subreddit),str(comment.author), cleaned_comment, comment_date, pattern_polarity, naivesbayes_positive]
+                data = [str(comment.id), str(comment.subreddit),str(comment.author), cleaned_comment, comment.score, comment_date, pattern_polarity, naivesbayes_positive]
                 cursor.execute(insertStatement, data)
                 connection.commit()
             except Exception as e:
