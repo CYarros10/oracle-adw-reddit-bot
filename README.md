@@ -11,5 +11,9 @@ python-to-adw.txt
 ## Bot ID's and API Keys: 
 praw.ini
 
-## SQL Notebook for Oracle ADW
+## SQL Notebooks for Oracle ADW
 MyReddit.json
+RedditBot.json
+
+## Raw Example SQL Statements
+reddit.sql
