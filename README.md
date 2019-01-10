@@ -12,8 +12,8 @@ python-to-adw.txt
 praw.ini
 
 ## SQL Notebooks for Oracle ADW
-MyReddit.json
-RedditBot.json
+* MyReddit.json
+* RedditBot.json
 
 ## Raw Example SQL Statements
 reddit.sql
