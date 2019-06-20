@@ -2,16 +2,17 @@
 import praw
 import re
 import random
-import mysql.connector
 import datetime
 import cx_Oracle as co
 import pandas as pd
 from textblob import TextBlob
 from textblob import Blobber
 from textblob.sentiments import NaiveBayesAnalyzer
+from better_profanity import profanity
 import sys
 
 tb = Blobber(analyzer=NaiveBayesAnalyzer())
+
 
 def remove_emoji(comment):
     emoji_pattern = re.compile("["
@@ -32,9 +33,11 @@ def get_comment_sentiment(comment):
     naives_analysis = tb(comment)
     return [pattern_analysis.sentiment, naives_analysis.sentiment]
 
+
 if len(sys.argv) >= 2:
     try:
-        connection = co.connect('CY', 'WElcome_123#', 'ChallengeADW_high')
+        censored_comments = 0
+        connection = co.connect("dbuser/WElcome_123#@gr1hb26xqe9aiee.cseiystga0o8.us-east-1.rds.amazonaws.com:1521/emp")
         cursor = connection.cursor()
 
         insertStatement = ("INSERT INTO RedditComments (comment_id, subreddit, author, r_comment, r_score, r_date, pattern_polarity, naivesbayes_positive) VALUES (:1, :2, :3, :4, :5, :6, :7, :8)")
@@ -53,14 +56,18 @@ if len(sys.argv) >= 2:
 
         for comment in comment_stream.stream.comments():
             print("====================================")
-            print("ID: ", comment.id)
             print("Author: ", comment.author)
             print("Subreddit: ", comment.subreddit)
-            cleaned_comment = remove_emoji(str(comment.body))
+
+            if profanity.contains_profanity(str(comment.body)):
+                censored_comments = censored_comments + 1
+                print(censored_comments)
+
+            cleaned_comment = profanity.censor((remove_emoji(str(comment.body))))
             comment_date = str(datetime.datetime.utcfromtimestamp(comment.created_utc).strftime('%Y-%m-%d %H:%M:%S'))
             sentiment = get_comment_sentiment(cleaned_comment)
-            pattern_polarity = sentiment[0].polarity
-            naivesbayes_positive = sentiment[1].p_pos
+            pattern_polarity = round(sentiment[0].polarity,4)
+            naivesbayes_positive = round(sentiment[1].p_pos,4)
             print("Body: ", cleaned_comment)
             try:
                 data = [str(comment.id), str(comment.subreddit),str(comment.author), cleaned_comment, comment.score, comment_date, pattern_polarity, naivesbayes_positive]

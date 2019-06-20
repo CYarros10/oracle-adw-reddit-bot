@@ -8,6 +8,10 @@ Add /Users/cyarros-oracle/.oci/cli-rc-file to include compartment id
 Install instant client put in project folder
 Install wallet put in project folder
 
+starting over?
+https://medium.com/@praneeth.jm/connecting-to-an-oracle-rds-instance-from-python-b532b1d7b7ea
+
+
 2
 
 Top 50:

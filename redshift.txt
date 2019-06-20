@@ -1,0 +1,30 @@
+Redshift.
+
+select distinct(subreddit) from dbuser.redditcomments;
+
+
+unload ('select * from dbuser.redditcomments where subreddit like \'funny\'')   
+to 's3://dms-oracle-demo/processed/subreddits/funny/' 
+iam_role 'arn:aws:iam::384988745299:role/Redshift_Unload_Role';
+
+unload ('select * from dbuser.redditcomments where subreddit like \'AskReddit\'')   
+to 's3://dms-oracle-demo/processed/subreddits/AskReddit/' 
+iam_role 'arn:aws:iam::384988745299:role/Redshift_Unload_Role';
+
+unload ('select * from dbuser.redditcomments where subreddit like \'LifeProTips\'')   
+to 's3://dms-oracle-demo/processed/subreddits/LifeProTips/' 
+iam_role 'arn:aws:iam::384988745299:role/Redshift_Unload_Role';
+
+unload ('select * from dbuser.redditcomments where subreddit like \'UpliftingNews\'')   
+to 's3://dms-oracle-demo/processed/subreddits/UpliftingNews/' 
+iam_role 'arn:aws:iam::384988745299:role/Redshift_Unload_Role';
+
+
+
+select count(*) from dbuser.redditcomments;
+
+select * from dbuser.redditcomments where subreddit = 'funny';
+DROP SCHEMA dbuser CASCAdE;
+
+-------------
+

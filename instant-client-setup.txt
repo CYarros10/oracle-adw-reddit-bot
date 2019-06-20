@@ -1,0 +1,6 @@
+Download instant client
+
+sudo mkdir -p /opt/oracle
+sudo cp -r instantclient_18_1 /opt/oracle
+mkdir lib
+ln -s /opt/oracle/instantclient_18_1/libclntsh.dylib ~/lib/
